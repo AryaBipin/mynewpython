@@ -5,25 +5,25 @@ from werkzeug.utils import secure_filename
 from PIL import Image,ImageDraw
 from waitress import serve 
 
-app = Flask(__name__)
+api = Flask(__name__)
 
 UPLOAD_FOLDER = 'static/uploads'
-app.secret_key = "secret key"
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+api.secret_key = "secret key"
+api.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
  
 
-@app.route('/')
+@api.route('/')
 def home():
     return render_template('index.html')
 
-@app.route('/favicon.ico')
+@api.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
                                'favicon.ico')
  
 
-@app.route('/upload', methods=['POST'])
+@api.route('/upload', methods=['POST'])
 def upload_image():
     file = request.files['image']
     print (request.files['image'])
@@ -43,4 +43,4 @@ def upload_image():
     return render_template('index.html')
 if __name__ == "__main__":
     #app.run(debug=True,port=5001)
-    serve(app)
+    serve(api)
