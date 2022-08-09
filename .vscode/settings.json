@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/2f56674b-e517-4b3d-bdac-8e141312af86/microsoft.web/sites/subscriptions/2f56674b-e517-4b3d-bdac-8e141312af86/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/profilepicpython",
+    "appService.deploySubpath": "."
+}
