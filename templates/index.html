@@ -217,7 +217,7 @@ bttn.addEventListener('click', () => {
                 const fd = new FormData();
                 const file = new File([blob], "cfile");
                 fd.append('image',file)
-                fetch("http://127.0.0.1:5001/upload", {
+                fetch("http://127.0.0.1:5000/upload", {
                         method: 'POST',
                         body: fd           
                         
