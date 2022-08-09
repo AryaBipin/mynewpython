@@ -3,8 +3,7 @@ import urllib.request
 import os
 from werkzeug.utils import secure_filename
 from PIL import Image,ImageDraw
-
-
+ 
 app = Flask(__name__)
 
 UPLOAD_FOLDER = 'static/uploads'
@@ -16,6 +15,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 @app.route('/')
 def home():
     return render_template('index.html')
+ 
 
 @app.route('/upload', methods=['POST'])
 def upload_image():
@@ -36,5 +36,4 @@ def upload_image():
     background.save(os.path.join(app.config['UPLOAD_FOLDER'], "profile.png"))
     return render_template('index.html')
 if __name__ == "__main__":
-    app.run(debug=True,port=5000)
-   
+    app.run(debug=True,port=5001)
