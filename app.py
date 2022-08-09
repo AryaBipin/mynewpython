@@ -3,7 +3,8 @@ import urllib.request
 import os
 from werkzeug.utils import secure_filename
 from PIL import Image,ImageDraw
- 
+from waitress import serve 
+
 app = Flask(__name__)
 
 UPLOAD_FOLDER = 'static/uploads'
@@ -41,4 +42,5 @@ def upload_image():
     background.save(os.path.join(app.config['UPLOAD_FOLDER'], "profile.png"))
     return render_template('index.html')
 if __name__ == "__main__":
-    app.run(debug=True,port=5001)
+    #app.run(debug=True,port=5001)
+    serve(app)
