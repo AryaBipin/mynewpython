@@ -3,7 +3,7 @@ import urllib.request
 import os
 from werkzeug.utils import secure_filename
 from PIL import Image,ImageDraw
-from waitress import serve 
+
 
 app = Flask(__name__)
 
